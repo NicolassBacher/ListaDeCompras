@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Compras</title>
+
+    <!-- icono -->
+    <link rel="icon" href="images/icono.png" type="image/png" />
+    <!-- info google -->
+    <meta name="description" content="Crea tu lista de compras para el super" />
+    <meta
+      name="keywords"
+      content="Compras, Carrito, Lista, Lista de compras, Shoping, Listado "
+    />
+    <meta name="author" content="Nicolas Bacher" />
+    <meta name="copyright" content="Escuela DevRock" />
+    <!-- data para robots -->
+    <meta name="robots" content="index nofollow" />
+    <!-- Data Faceboock (og)-->
+    <meta property="og:title" content="Lista de Compras" />
+    <meta
+      property="og:description"
+      content="Crea tu lista de compras para el super, olvidate del papel"
+    />
+    <meta property="og:type" content="Lista" />
+    <meta
+      property="og:image"
+      content="https://reto03-winter.web.app/images/screen.png"
+    />
+    <meta property="og:url" content="https://reto03-winter.web.app" />
+    <!-- Data Twitter -->
+    <meta property="twitter:title" content="Lista de Compras" />
+    <meta
+      property="twitter:description"
+      content="Crea tu lista de compras para el super, olvidate del papel"
+    />
+    <meta property="twitter:type" content="Lista" />
+    <meta
+      property="twitter:image"
+      content="https://reto03-winter.web.app/images/screen.png"
+    />
+    <meta property="twitter:url" content="https://reto03-winter.web.app" />
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header><h1>Lista de Compras</h1></header>
+    <section>
+      <!-- BOTON + -->
+      <button id="btnformulario">+</button>
+      <!-- Popup Formulario -->
+      <div class="caja" id="formulario">
+        <button id="btncerrar1" class="btncerrar">X</button>
+        <div class="cajaformulario">
+          <h2>Agregar Item</h2>
+          <br />
+          <form action="#" id="datos" validate>
+            <label for="titulo">Ingrese el Producto:</label>
+
+            <input
+              class="menu"
+              type="text"
+              name="'titulo"
+              id="titulo"
+              placeholder="Ej: Manzana"
+              required
+            />
+
+            <br />
+            <label for="tipo">Seleccione tipo:</label>
+            <select name="tipo" id="tipo" class="menu" required>
+              <option value=""></option>
+              <option value="images/art-de-limpieza.png">
+                Articulo de limpieza
+              </option>
+              <option value="images/bebida.png">Bebidas</option>
+              <option value="images/carne.png">Carnes</option>
+              <option value="images/comestibles.png">Comestibles</option>
+              <option value="images/entretenimiento.png">
+                Entretenimiento
+              </option>
+              <option value="images/fruta.png">Fruta</option>
+              <option value="images/higiene-personal.png">
+                higiene personal
+              </option>
+              <option value="images/indumentaria.png">Indumentaria</option>
+              <option value="images/lacteos.png">lacteos</option>
+              <option value="images/tecnologia.png">Tecnologia</option>
+              <option value="images/verdura.png">Verduras</option></select
+            ><br />
+            <label for="descripcion">Descripcion:</label>
+            <textarea
+              class="menu"
+              name="descripcion"
+              id="descripcion"
+              cols="30"
+              rows="5"
+              placeholder="Ej: 1 kg. preferentemente verde"
+            ></textarea
+            ><br />
+
+            <button id="btnagregar" class="boton">Agregar</button>
+          </form>
+        </div>
+      </div>
+      <!-- Pantalla de inicio, Carro vacio -->
+      <div id="inicio">
+        <h3>No tienes elementos en la lista.</h3>
+      </div>
+      <!-- Listado de Productos -->
+      <div id="lista">
+        <div class="item encabezado"><h2>Listadito</h2></div>
+        <!-- <button id="btnDetalle" class="boton">detalle</button> -->
+        <ul id="contenedor"></ul>
+      </div>
+      <!-- Detalle del producto -->
+      <div class="caja" id="detalle">
+        <button id="btncerrar2" class="btncerrar">X</button>
+        <div id="enviaDetalle"></div>
+      </div>
+
+      <div id="pantallaOscura"></div>
+    </section>
+    <!-- link JS -->
+    <script src="JS/app.js"></script>
+  </body>
+</html>
