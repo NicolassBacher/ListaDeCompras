@@ -78,7 +78,7 @@ section #lista ul {
     align-items: center;
     margin: 8px;
     width: 80%;
-    padding: 15px;
+    padding: 5px;
     background: rgba(95, 158, 160, 0.9);
     border-radius: 20px;
     box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.5);
@@ -98,6 +98,7 @@ section #lista ul {
 
 #contenedor {
     width: 100%;
+    margin-bottom: 80px;
 }
 
 #btnformulario {
@@ -113,6 +114,13 @@ section #lista ul {
     border: none;
     bottom: 20px;
     right: 20px;
+    z-index: 10;
+}
+
+#btnVaciarLista{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
     z-index: 10;
 }
 

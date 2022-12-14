@@ -4,6 +4,7 @@ let btnAgregar = document.getElementById('btnagregar')
 let btnCerrar1 = document.getElementById('btncerrar1')
 let btnCerrar2 = document.getElementById('btncerrar2')
 let btnDetalle = document.getElementById('btnDetalle')
+let btnVaciarLista = document.getElementById('btnVaciarLista')
 
 /* variable de datos de formulario */
 let datos = document.getElementById('datos')
@@ -24,9 +25,6 @@ let identificador = 0
 
 /* ARRAY */
 let guardar = []
-
-
-
 
 /* Abrir formulario */
 let abrirFormulario = () => {
@@ -85,7 +83,6 @@ let agregarItem = (titulo, tipo, descripcion) => {
     padre1.innerHTML = modeloItem1
     modificarStorage(titulo, tipo, descripcion, identificador)
     identificador = 0
-
   }
   else {
     item++
@@ -120,7 +117,6 @@ let borrar = (ids) => {
   itemBorrar.remove()
   borrarStorage(ids)
   cerrar()
-
 }
 
 let guardarStorage = (titulo, tipo, descripcion, ids) => {
@@ -144,53 +140,40 @@ let borrarStorage = (ids) => {
     if (guardar[i].id == ids) {
       guardar.splice(i, 1)
     }
-
   }
-
   localStorage.setItem('items', JSON.stringify(guardar))
   console.log(guardar)
 }
 
-
 let verStorage = () => {
-
-  /* investigar promesas porque no llega  acargar las imagenes que esta ejecutando el borrar */
-
-
   let traerStorage = localStorage.getItem('items')
   let elementos = {}
   if (traerStorage) {
-    let promesa = new Promise((resolve, reject) => {
-      elementos = JSON.parse(traerStorage)
-      console.log('parsear')
-      resolve()
-
-
-    })
-    promesa.then(() => {
-      console.log('borrar')
-      localStorage.removeItem('items')
-    })
-      .then(() => console.log(elementos))
-      .then(() => {
-        for (let i = 0; i < elementos.length; i++) {
-          agregarItem(elementos[i].title, elementos[i].description, elementos[i].tipe)
-        }
-      })
-      .then(() => cerrar())
+    elementos = JSON.parse(traerStorage)
+    localStorage.removeItem('items')
+    for (let i = 0; i < elementos.length; i++) {
+      agregarItem(elementos[i].title, elementos[i].tipe, elementos[i].description)
+    }
+    localStorage.removeItem('items')
+    cerrar()
   }
-
 }
 
 verStorage()
 
-
-
-
-
-
-
-
+let vaciarLista = (() => {
+  let contador = 0
+  while (cantidad > 0) {
+    let ids = 'id' + contador
+    let itemBorrar = document.getElementById(`${ids}`)
+    if (itemBorrar) {
+      itemBorrar.remove()
+      cantidad--
+    }
+    contador++
+  }
+  cerrar()
+})
 
 /* funciona enviar formulario */
 let enviar = (e) => {
@@ -206,6 +189,8 @@ let enviar = (e) => {
 btnFormulario.addEventListener('click', abrirFormulario)
 btnCerrar2.addEventListener('click', cerrar)
 btnCerrar1.addEventListener('click', cerrar)
+btnVaciarLista.addEventListener('click', vaciarLista)
+
 
 /* Llamado de funciona para cerrar popup haciendo clicl afuera */
 pantallaOscura.addEventListener('click', cerrar)
