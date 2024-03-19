@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Compras</title>
 
+    <!-- SACAR TODOS LOS BR Y HACER EL CSS CORRECTAMETNE -->
+
     <!-- icono -->
     <link rel="icon" href="images/icono.png" type="image/png" />
     <!-- info google -->
@@ -55,11 +57,11 @@
         <button id="btncerrar1" class="btncerrar">X</button>
         <div class="cajaformulario">
           <h2>Agregar Item</h2>
-          <br />
           <form action="#" id="datos" validate>
             <label for="titulo">Ingrese el Producto:</label>
 
             <input
+              tabindex="1"
               class="menu"
               type="text"
               name="'titulo"
@@ -68,9 +70,9 @@
               required
             />
 
-            <br />
+
             <label for="tipo">Seleccione tipo:</label>
-            <select name="tipo" id="tipo" class="menu" required>
+            <select tabindex="2" name="tipo" id="tipo" class="menu" required>
               <option value=""></option>
               <option value="images/art-de-limpieza.png">
                 Articulo de limpieza
@@ -89,17 +91,18 @@
               <option value="images/lacteos.png">lacteos</option>
               <option value="images/tecnologia.png">Tecnologia</option>
               <option value="images/verdura.png">Verduras</option></select
-            ><br />
+  
             <label for="descripcion">Descripcion:</label>
             <textarea
+              tabindex="3"
               class="menu"
               name="descripcion"
               id="descripcion"
               cols="30"
               rows="5"
-              placeholder="Ej: 1 kg. preferentemente verde"
+              placeholder="Ej: 1 kg."
             ></textarea
-            ><br />
+  
 
             <button id="btnagregar" class="boton">Agregar</button>
           </form>
