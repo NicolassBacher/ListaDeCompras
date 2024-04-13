@@ -70,7 +70,6 @@
               required
             />
 
-
             <label for="tipo">Seleccione tipo:</label>
             <select tabindex="2" name="tipo" id="tipo" class="menu" required>
               <option value=""></option>
@@ -90,8 +89,8 @@
               <option value="images/indumentaria.png">Indumentaria</option>
               <option value="images/lacteos.png">lacteos</option>
               <option value="images/tecnologia.png">Tecnologia</option>
-              <option value="images/verdura.png">Verduras</option></select
-  
+              <option value="images/verdura.png">Verduras</option>
+            </select>
             <label for="descripcion">Descripcion:</label>
             <textarea
               tabindex="3"
@@ -101,8 +100,7 @@
               cols="30"
               rows="5"
               placeholder="Ej: 1 kg."
-            ></textarea
-  
+            ></textarea>
 
             <button id="btnagregar" class="boton">Agregar</button>
           </form>
@@ -114,9 +112,11 @@
       </div>
       <!-- Listado de Productos -->
       <div id="lista">
-        <div class="item encabezado"><h2>Listadito</h2></div>
-        <!-- <button id="btnDetalle" class="boton">detalle</button> -->
-        <ul id="contenedor"></ul>
+        <div class="separador">
+          <div class="item encabezado"><h2>Listadito</h2></div>
+          <!-- <button id="btnDetalle" class="boton">detalle</button> -->
+          <ul id="contenedor"></ul>
+        </div>
         <button id="btnVaciarLista" class="boton">Vaciar Lista</button>
       </div>
       <!-- Detalle del producto -->
